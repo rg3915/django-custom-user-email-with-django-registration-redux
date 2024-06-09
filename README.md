@@ -36,8 +36,42 @@ python contrib/env_gen.py
 python manage.py migrate
 python manage.py createsuperuser --username="admin" --email=""
 
+python manage.py test
+
 python manage.py runserver
 ```
+
+## models.py
+
+```python
+# accounts/models.py
+class User(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(_('email address'), unique=True)
+    first_name = models.CharField(_('first name'), max_length=150, blank=True)
+    last_name = models.CharField(_('last name'), max_length=150, blank=True)
+    date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
+    is_active = models.BooleanField(_('active'), default=True)
+    is_admin = models.BooleanField(
+        _('admin status'),
+        default=False,
+        help_text=_(
+            'Designates whether the user can log into this admin site.'),
+    )
+
+    objects = UserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    class Meta:
+        verbose_name = _('user')
+        verbose_name_plural = _('users')
+
+    def __str__(self):
+        return self.email
+```
+
+![](img/index.png)
 
 Baseado em [django-custom-login-email](https://github.com/rg3915/django-custom-login-email)
 

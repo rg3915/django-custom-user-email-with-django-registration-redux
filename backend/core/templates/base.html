@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="shortcut icon" href="https://www.djangoproject.com/favicon.ico">
+  <title>Django Custom User</title>
+
+  <!-- PicoCSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+
+  <!-- Custom styles for this example -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- Hero -->
+  <div
+    class="hero"
+    data-theme="dark"
+  >
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <a
+            href="https://www.youtube.com/c/RegisdoPython/videos"
+            class="contrast"
+          ><strong>Regis do Python</strong></a>
+        </li>
+        <li>
+          <a href="">Login</a>
+        </li>
+      </ul>
+    </nav>
+    <header class="container">
+      <hgroup>
+        <h1>Custom User E-mail and Django Registration Redux</h1>
+      </hgroup>
+      <p><a
+          href="https://github.com/rg3915/django-custom-user-email-with-django-registration-redux"
+          target="_blank"
+          role="button"
+        >Github</a></p>
+      <p>Imagem by Unsplash</p>
+    </header>
+  </div>
+  <!-- ./ Hero -->
+
+  <!-- Main -->
+  <main class="container">
+    {% block content %}{% endblock content %}
+  </main>
+  <!-- ./ Main -->
+
+  <!-- Footer -->
+  <footer class="container">
+    <small>Built with <a href="https://picocss.com">Pico</a> •
+      <a href="https://github.com/picocss/examples/tree/master/v1-company/">Source code</a></small>
+  </footer>
+  <!-- ./ Footer -->
+
+  {% block js %}{% endblock js %}
+</body>
+
+</html>
