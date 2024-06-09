@@ -9,6 +9,9 @@ E usa [django-registration-redux](https://django-registration-redux.readthedocs.
 
 **Doc:** https://django-registration-redux.readthedocs.io/en/latest/
 
+![](img/index.png)
+
+
 ## Este projeto foi feito com:
 
 * [Django 5.0.6](https://www.djangoproject.com/)
@@ -71,7 +74,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 ```
 
-![](img/index.png)
 
 Baseado em [django-custom-login-email](https://github.com/rg3915/django-custom-login-email)
 
