@@ -17,6 +17,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
     'backend.accounts',  # <---
+    'registration',  # <---
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,6 +30,7 @@ INSTALLED_APPS = [
     'backend.core',
 ]
 
+REGISTRATION_AUTO_LOGIN = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
