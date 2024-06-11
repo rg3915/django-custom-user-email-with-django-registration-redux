@@ -78,8 +78,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 ## Mailhog
 
-Acesse os emails em 
+Acesse os e-mails em http://localhost:8025
 
+![](img/mailhog.png)
+
+---
 
 Baseado em [django-custom-login-email](https://github.com/rg3915/django-custom-login-email)
 

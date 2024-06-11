@@ -34,9 +34,22 @@
           ><strong>Regis do Python</strong></a>
         </li>
         <li>
-          <a href="">Login</a>
+          <a href="{% url 'auth_login' %}">Login</a>
         </li>
+        {% if request.user.is_authenticated %}
+          <li>Você está logado como {{ request.user }}</li>
+        {% endif %}
       </ul>
+      {% if request.user.is_authenticated %}
+        <ul>
+          <li>
+            <form action="{% url 'auth_logout' %}" method="POST">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+          </li>
+        </ul>
+      {% endif %}
     </nav>
     <header class="container">
       <hgroup>
