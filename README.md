@@ -34,6 +34,8 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 
+docker-compose up -d
+
 python contrib/env_gen.py
 
 python manage.py migrate
@@ -73,6 +75,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 ```
+
+## Mailhog
+
+Acesse os emails em 
 
 
 Baseado em [django-custom-login-email](https://github.com/rg3915/django-custom-login-email)
